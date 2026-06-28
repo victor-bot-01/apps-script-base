@@ -12,7 +12,8 @@ function getAccessToken() {
   const headers = {
     Authorization: "Basic " + Utilities.base64Encode(client_id + ":" + client_secret),
     "Content-Type": "application/x-www-form-urlencoded",
-    Accept: "application/json"
+    Accept: "application/json",
+    "enable-jwt": "1"
   };
 
   const options = {
@@ -59,7 +60,7 @@ function importarPedidosUltimos3Dias() {
 
   const headers = {
     method: "get",
-    headers: { Authorization: `Bearer ${accessToken}` },
+    headers: { Authorization: `Bearer ${accessToken}`, "enable-jwt": "1" },
     muteHttpExceptions: true
   };
 
